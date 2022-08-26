@@ -5,9 +5,7 @@ using UnityEngine.Events;
 
 public class ButtonScript : MonoBehaviour
 {
-    public enum ButtonType { Normal, Key, KeyCard };
     public enum Axis { x, y, z };
-    public ButtonType type;
 
     public UnityEvent m_MyEvent;
     public AudioClip PressAudio;
@@ -76,38 +74,4 @@ public class ButtonScript : MonoBehaviour
         if (isAnimated)
             StartCoroutine(ButtonAnimation());
     }
-
-    /*public void Press()
-    {
-        if (doorButton && door.Locked)
-        {
-            if (door.CheckForKey())
-            {
-                door.Unlock();
-
-                m_MyEvent.Invoke();
-                if (PressAudio != null)
-                    GetComponent<AudioSource>().PlayOneShot(PressAudio, 0.5f);
-
-                if (type == ButtonType.KeyCard)
-                {
-                    door.Lock();
-                }
-            }
-            else
-            {
-                if (denyAudio != null)
-                    GetComponent<AudioSource>().PlayOneShot(denyAudio, 0.5f);
-            }
-        }
-        else
-        {
-            m_MyEvent.Invoke();
-            if (PressAudio != null)
-                GetComponent<AudioSource>().PlayOneShot(PressAudio, 0.5f);
-        }
-
-        if (isAnimated)
-            StartCoroutine(ButtonAnimation());
-    }*/
 }
